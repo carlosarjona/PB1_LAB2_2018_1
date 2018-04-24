@@ -4,8 +4,18 @@ using System.Text;
 
 namespace PB01.AplicationCore.Entity
 {
-    class BemPatrimonial
+
+  
+
+   public class BemPatrimonial
     {
+
+        public BemPatrimonial()
+        {
+
+        }
+
+
         public int BemPatrimonialId { get; set; }
         public DateTime DataCadastro { get; set; }
         public string NumeroTombo { get; set; }

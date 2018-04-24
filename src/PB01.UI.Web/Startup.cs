@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using PB01.UI.Web.Data;
 using PB01.UI.Web.Models;
 using PB01.UI.Web.Services;
+using PB01.Infrastructure.Data;
 
 namespace PB01.UI.Web
 {
@@ -32,6 +33,9 @@ namespace PB01.UI.Web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddDbContext<BemPatrimonialContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
