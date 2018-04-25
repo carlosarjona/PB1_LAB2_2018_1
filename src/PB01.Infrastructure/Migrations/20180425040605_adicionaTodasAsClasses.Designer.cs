@@ -11,9 +11,10 @@ using System;
 namespace PB01.Infrastructure.Migrations
 {
     [DbContext(typeof(BemPatrimonialContext))]
-    partial class BemPatrimonialContextModelSnapshot : ModelSnapshot
+    [Migration("20180425040605_adicionaTodasAsClasses")]
+    partial class adicionaTodasAsClasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

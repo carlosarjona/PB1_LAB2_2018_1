@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PB01.AplicationCore.Entity
 {
-    class Endereco
+    public class Endereco
     {
         public int EnderecoId { get; set; }
         public string Logradouro { get; set; }
