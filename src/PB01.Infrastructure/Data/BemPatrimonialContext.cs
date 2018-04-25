@@ -29,9 +29,42 @@ namespace PB01.Infrastructure.Data
             modelBuilder.Entity<Responsavel>().ToTable("Responsavel");
             modelBuilder.Entity<Auditoria>().ToTable("Auditoria");
 
+            #region Configurações de BemPatrimonial
 
+            modelBuilder.Entity<BemPatrimonial>().Property(e => e.Descricao)
+                .HasColumnType("varchar(200)")
+                .IsRequired();
 
+            modelBuilder.Entity<BemPatrimonial>().Property(e => e.NumeroTombo)
+                .HasColumnType("varchar(200)")
+                .IsRequired();
+            #endregion
 
+            #region Configurações de Categoria
+            modelBuilder.Entity<Categoria>().Property(e => e.Descricao)
+                .HasColumnType("varchar(200)")
+                .IsRequired();
+            #endregion
+
+            #region Configurações de Endereço
+
+        
+            modelBuilder.Entity<Endereco>().Property(e => e.Bairro)
+                .HasColumnType("varchar(200)")
+                .IsRequired();
+
+            modelBuilder.Entity<Endereco>().Property(e => e.CEP)
+                .HasColumnType("varchar(10)")
+                .IsRequired();
+
+            modelBuilder.Entity<Endereco>().Property(e => e.Logradouro)
+                .HasColumnType("varchar(200)")
+                .IsRequired();
+
+            modelBuilder.Entity<Endereco>().Property(e => e.Numero)
+                .HasColumnType("varchar(10)")
+                .IsRequired();
+            #endregion
         }
     }
 }
